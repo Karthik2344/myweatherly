@@ -26,9 +26,24 @@ footer{
     align-items: center;
 }
 .header h1{ 
+    text-shadow: 2px 2px black;
     color: rgb(178, 230, 59);
     text-decoration: underline;
     font-family: 'Orbitron', sans-serif;
+}
+h1::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 10;
+    left: 20;
+    transform-origin: bottom;
+    transform: rotateX(180deg);
+    line-height: 1em;
+    background: linear-gradient(0deg,#fff 0,transparent 80%) ;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.2;
 }
 #input{
     font-size: 18px;
@@ -39,16 +54,28 @@ footer{
     background: aliceblue;
 }
 #search{
+    position: relative;
+    display: inline-block;
     background: none;
     padding: 5px 20px;
     color: rgb(224, 231, 237);
     outline: none;
-    background: rgb(99, 210, 152);
+    background: darkslategray;
     font-size: 17px;
     border-radius: 15px;
     cursor: pointer;
     border: none;
+    font-size: 1em;
+    letter-spacing: .1em;
+    transition: 0.5s;
+    box-shadow: 2px 2px black;
 }
+#search:hover{
+    position: relative;
+    letter-spacing: 0.25rem;
+    color: #00eeff;
+}
+
 .weather{
     text-align: center;
     color: aliceblue;
@@ -113,6 +140,7 @@ main{
     border-radius: 20px;
     font-size: 18px;
     margin-bottom: 5px;
+    box-shadow: 1.5px 1.5px black;
 }
 .divider1,.divider2{
     background: rgba(252, 236, 222, 0.539);
@@ -129,4 +157,5 @@ main{
 }
 .desc{
     color: rgb(196, 255, 77);
+    
 }
